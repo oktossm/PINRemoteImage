@@ -191,6 +191,12 @@ NSErrorDomain const PINURLErrorDomain = @"PINURLErrorDomain";
     });
 }
 
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task willPerformHTTPRedirection:(NSHTTPURLResponse *)response newRequest:(NSURLRequest *)request completionHandler:(void (^) (NSURLRequest *_Nullable))completionHandler
+{
+    if (completionHandler)
+        completionHandler(request);
+}
+
 #pragma mark - session statistics
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didFinishCollectingMetrics:(NSURLSessionTaskMetrics *)metrics
