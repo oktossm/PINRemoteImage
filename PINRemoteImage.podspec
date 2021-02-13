@@ -9,17 +9,18 @@
 
 Pod::Spec.new do |s|
   s.name             = "PINRemoteImage"
-  s.version          = "3.0.0-beta.13"
+  s.version          = "3.0.3"
   s.summary          = "A thread safe, performant, feature rich image fetcher"
   s.homepage         = "https://github.com/pinterest/PINRemoteImage"
   s.license          = 'Apache 2.0'
   s.author           = { "Garrett Moon" => "garrett@pinterest.com" }
   s.source           = { :git => "https://github.com/pinterest/PINRemoteImage.git", :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/garrettmoon'
+  s.prefix_header_file = false
+  # s.social_media_url = 'https://twitter.com/garrettmoon'
 
-  ios_deployment = "7.0"
+  ios_deployment = "8.0"
   tvos_deployment = "9.0"
-  osx_deployment = "10.9"
+  osx_deployment = "10.11"
   s.ios.deployment_target = ios_deployment
   s.tvos.deployment_target = tvos_deployment
   s.requires_arc = true
@@ -34,7 +35,7 @@ Pod::Spec.new do |s|
     cs.osx.deployment_target = osx_deployment
     cs.source_files = 'Source/Classes/**/*.{h,m}'
     cs.public_header_files = 'Source/Classes/**/*.h'
-    cs.exclude_files = 'Source/Classes/PINCache/*.{h,m}'
+    cs.exclude_files = 'Source/Classes/PINCache/*.{h,m}', 'Source/Classes/include/PINCache+PINRemoteImageCaching.h'
     cs.frameworks = 'ImageIO', 'Accelerate'
   end
   
@@ -70,11 +71,11 @@ Pod::Spec.new do |s|
   
   s.subspec "PINCache" do |pc|
     pc.dependency 'PINRemoteImage/Core'
-    pc.dependency 'PINCache', '=3.0.1-beta.7'
+    pc.dependency 'PINCache', '~> 3.0.3'
     pc.ios.deployment_target = ios_deployment
     pc.tvos.deployment_target = tvos_deployment
     pc.osx.deployment_target = osx_deployment
-    pc.source_files = 'Source/Classes/PINCache/*.{h,m}'
+    pc.source_files = 'Source/Classes/PINCache/*.{h,m}', 'Source/Classes/include/PINCache+PINRemoteImageCaching.h'
   end
   
 end

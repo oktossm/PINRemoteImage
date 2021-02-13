@@ -6,7 +6,11 @@
 //
 //
 
+#if !__has_include(<PINOperation/PINOperation.h>)
+#import "PINOperation.h"
+#else
 #import <PINOperation/PINOperation.h>
+#endif
 
 #import "PINRemoteImageManager+Private.h"
 #import "PINRemoteImageTask.h"

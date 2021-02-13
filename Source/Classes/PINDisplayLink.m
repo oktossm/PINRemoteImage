@@ -9,6 +9,8 @@
 
 #if PIN_TARGET_MAC
 
+#import <CoreVideo/CoreVideo.h>
+
 @interface PINDisplayLink ()
 
 @property (nonatomic, readonly) id target;
