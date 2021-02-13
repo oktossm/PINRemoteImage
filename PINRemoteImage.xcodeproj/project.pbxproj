@@ -1270,7 +1270,7 @@
 					"$(PROJECT_DIR)/webp",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"PIN_WEBP=1",
+					"PIN_WEBP=0",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Source/Info.plist;
@@ -1305,7 +1305,7 @@
 					"$(PROJECT_DIR)/webp",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"PIN_WEBP=1",
+					"PIN_WEBP=0",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Source/Info.plist;
